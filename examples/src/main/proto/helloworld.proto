@@ -40,6 +40,7 @@ package helloworld;
 service Greeter {
   // Sends a greeting
   rpc SayHello (HelloRequest) returns (HelloReply) {}
+  rpc HelloBySelf (Hellor) returns (Helloy) {}
 }
 
 // The request message containing the user's name.
@@ -50,4 +51,12 @@ message HelloRequest {
 // The response message containing the greetings
 message HelloReply {
   string message = 1;
+}
+
+message Hellor {
+  string namee = 1;
+}
+
+message Helloy {
+  string messagee = 1;
 }

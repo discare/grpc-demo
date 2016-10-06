@@ -97,5 +97,13 @@ public class HelloWorldServer {
       responseObserver.onNext(reply);
       responseObserver.onCompleted();
     }
+
+    @Override
+    public void helloBySelf(Hellor req, StreamObserver<Helloy> responseObserver) {
+      Helloy reply = Helloy.newBuilder().setMessagee("Hallo " + req.getNamee() + "!").build();
+      responseObserver.onNext(reply);
+      responseObserver.onCompleted();
+      System.out.println("rpc method invoked!");
+    }
   }
 }
